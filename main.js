@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Libro_1 = require("./models/Libro");
+var Revista_1 = require("./models/Revista");
+var Usuario_1 = require("./models/Usuario");
+var libro1 = new Libro_1.Libro(1, "Cien Años de Soledad", "Gabriel García Márquez", 471, "Realismo Mágico");
+var libro2 = new Libro_1.Libro(2, "El Señor de los Anillos", "J.R.R. Tolkien", 1200, "Fantasía");
+var revista = new Revista_1.Revista(3, "National Geographic", "Varios", 202);
+var usuario = new Usuario_1.Usuario(1, "Nazarena");
+usuario.prestar(libro1);
+usuario.prestar(revista);
+usuario.mostrarPrestados();
+usuario.mostrarUltimaPrestacion();
+var materiales = [libro1, libro2, revista];
+materiales.forEach(function (material) { return material.mostrarInfo(); });
