@@ -21,9 +21,21 @@
 
 ## Ejemplos de tipado
 
-### a. Función con parámetros obligatorios y opcionales
+### a. Una función con parámetros obligatorios y opcionales
 
-```ts
 function saludar(nombre: string, edad?: number): string {
   return `Hola ${nombre}, ${edad ? `tienes ${edad} años` : "edad no especificada"}`;
 }
+
+### b. Una función que devuelve una promise
+obtenerDatos().then((resultado) => {
+  console.log(resultado);
+});
+
+async function mostrar() {
+  const resultado = await obtenerDatos();
+  console.log(resultado);
+}
+mostrar();
+
+
